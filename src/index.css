@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-navy-900 text-slate-100 antialiased overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .bg-mesh-gradient {
+    background: radial-gradient(circle at top left, rgba(0, 240, 255, 0.1), transparent 40%),
+      radial-gradient(circle at bottom right, rgba(138, 43, 226, 0.1), transparent 40%),
+      radial-gradient(circle at center, rgba(0, 255, 255, 0.03), transparent 60%);
+    background-size: 200% 200%;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+
+  .glass-card-hover {
+    @apply hover:border-yellow-400/40 hover:shadow-[0_0_20px_rgba(255, 215, 0, 0.15)] transition-all duration-300;
+  }
+
+  .gpu-accelerate {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0f1c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
